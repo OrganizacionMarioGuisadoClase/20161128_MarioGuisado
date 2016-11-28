@@ -1,0 +1,12 @@
+es\albarregas\filters\UTF8Filter.class
+es\albarregas\controladores\Insercion.class
+es\albarregas\dao\IAlumnosDAO.class
+es\albarregas\dao\IEquiposDAO.class
+es\albarregas\daofactory\MySQLDAOFactory.class
+es\albarregas\dao\EquiposDAO.class
+es\albarregas\dao\AlumnosDAO.class
+es\albarregas\daofactory\DAOFactory.class
+es\albarregas\dao\ConnectionFactory.class
+es\albarregas\beans\Equipo.class
+es\albarregas\beans\Alumno.class
+es\albarregas\controladores\Operacion.class

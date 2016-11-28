@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root   xmlns:jsp="http://java.sun.com/JSP/Page"
+            xmlns:c="http://java.sun.com/jsp/jstl/core"
+            version="2.1">
+    <jsp:directive.page contentType="text/html; charset=UTF-8" />
+    <jsp:directive.page isELIgnored="false" />
+    <jsp:output omit-xml-declaration="false"
+                doctype-root-element="html"
+                doctype-public="-//W3C//DTD XHTML 1.1//EN"
+                doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd" />
+
+    <html>
+        <head>
+            <title>Fin insertar</title>
+            <link rel="stylesheet" type="text/css" href="${sessionScope.path}/css/bootstrap.css" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Se han insertado estos datos:</h1><br/>
+                <table class="table table-bordered">
+                    <tbody>
+                            <tr>
+                                <c:choose>
+                                    <c:when test="${insertar=='alumno'}">
+                                        <td><c:out value="${datos.nombre}"/></td>
+                                        <td><c:out value="${datos.grupo}"/></td>
+                                    </c:when>
+                                        <c:when test="${insertar=='equipo'}">
+                                        <td><c:out value="${datos.marca}"/></td>
+                                        <td><c:out value="${datos.numSerie}"/></td>
+                                    </c:when>
+                                </c:choose>
+                                
+                            </tr>
+                    </tbody>
+                </table>
+                <br/>
+                <a class="btn btn-default" href="${sessionScope.path}/index.jspx">Volver</a>
+            </div>           
+        </body>
+    </html>
+</jsp:root>

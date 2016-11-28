@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root   xmlns:jsp="http://java.sun.com/JSP/Page"
+            xmlns:c="http://java.sun.com/jsp/jstl/core"
+            version="2.1">
+    <jsp:directive.page contentType="text/html; charset=UTF-8" />
+    <jsp:directive.page isELIgnored="false" />
+    <jsp:output omit-xml-declaration="false"
+                doctype-root-element="html"
+                doctype-public="-//W3C//DTD XHTML 1.1//EN"
+                doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd" />
+    
+    <html>
+        <head>
+            <title>Alumnos y Equipos Asignados</title>
+            <link rel="stylesheet" type="text/css" href="${sessionScope.path}/css/bootstrap.css" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Alumnos y Equipos Asignados</h1><br/>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Grupo</th>
+                        <th>Equipo</th>
+                    </tr>
+                </thead>
+                <tbody>                
+                    <c:forEach var="alumno" items="${lista}">
+                        <tr>
+                            <td><c:out value="${alumno.nombre}"/></td>
+                            <td><c:out value="${alumno.grupo}"/></td>
+                            <td><c:out value="${alumno.equipo.marca}" default="Sin equipo asignado"/></td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+            </table>
+            <br/>
+            <a class="btn btn-default" href="${sessionScope.path}/index.jspx">Volver</a>
+            </div>           
+        </body>
+    </html>
+</jsp:root>
